@@ -1,0 +1,5 @@
+projectKey=FET-java-major-project-G1
+serverUrl=http://172.27.12.78
+dashboardUrl=http://172.27.12.78/dashboard/index/FET-java-major-project-G1
+ceTaskId=AXaJD1cjirXW5IlAPW7K
+ceTaskUrl=http://172.27.12.78/api/ce/task?id=AXaJD1cjirXW5IlAPW7K

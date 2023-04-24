@@ -1,0 +1,6 @@
+projectKey=Security_Report_Demo_Akshay:B1
+serverUrl=http://172.27.59.122:8081
+serverVersion=8.9.2.46101
+dashboardUrl=http://172.27.59.122:8081/dashboard?id=Security_Report_Demo_Akshay%3AB1
+ceTaskId=AXzZuTTCphkX0affELUW
+ceTaskUrl=http://172.27.59.122:8081/api/ce/task?id=AXzZuTTCphkX0affELUW

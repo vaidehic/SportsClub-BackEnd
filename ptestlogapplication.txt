@@ -1,0 +1,62 @@
+2020-12-09 18:26:02.306  INFO 8336 --- [restartedMain] com.cybage.DeccanSportClubApplication    : Starting DeccanSportClubApplication using Java 14.0.2 on Mukeshkumars with PID 8336 (D:\Malor-Project\deccan-sport-club\target\classes started by mukeshkumars in D:\Malor-Project\deccan-sport-club)
+2020-12-09 18:26:02.308  INFO 8336 --- [restartedMain] com.cybage.DeccanSportClubApplication    : No active profile set, falling back to default profiles: default
+2020-12-09 18:26:02.672  INFO 8336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-09 18:26:02.702  INFO 8336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 5 JPA repository interfaces.
+2020-12-09 18:26:02.919  INFO 8336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-09 18:26:02.920  INFO 8336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-09 18:26:02.920  INFO 8336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-09 18:26:03.039  INFO 8336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-09 18:26:03.040  INFO 8336 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 728 ms
+2020-12-09 18:26:03.140  INFO 8336 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-09 18:26:03.175  INFO 8336 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-09 18:26:03.189  INFO 8336 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-30 - Starting...
+2020-12-09 18:26:03.363  INFO 8336 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-30 - Start completed.
+2020-12-09 18:26:03.364  INFO 8336 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-12-09 18:26:03.385  WARN 8336 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-09 18:26:03.784  INFO 8336 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-09 18:26:03.785  INFO 8336 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-09 18:26:04.169  WARN 8336 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-12-09 18:26:04.301  INFO 8336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-09 18:26:04.307  INFO 8336 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-12-09 18:26:04.595  INFO 8336 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-12-09 18:26:04.605  INFO 8336 --- [restartedMain] com.cybage.DeccanSportClubApplication    : Started DeccanSportClubApplication in 2.362 seconds (JVM running for 23430.577)
+2020-12-09 18:26:04.607  INFO 8336 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-12-09 18:26:09.948  INFO 8336 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-09 18:26:09.948  INFO 8336 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-09 18:26:09.949  INFO 8336 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2020-12-09 18:26:09.951  INFO 8336 --- [http-nio-8080-exec-1] com.cybage.services.SportsServiceImpl    : getting sports
+2020-12-09 18:33:22.074  INFO 8336 --- [Thread-146] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-09 18:33:22.076  INFO 8336 --- [Thread-146] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-09 18:33:22.076  INFO 8336 --- [Thread-146] com.zaxxer.hikari.HikariDataSource       : HikariPool-30 - Shutdown initiated...
+2020-12-09 18:33:22.113  INFO 8336 --- [Thread-146] com.zaxxer.hikari.HikariDataSource       : HikariPool-30 - Shutdown completed.
+2020-12-09 18:33:22.357  INFO 8336 --- [restartedMain] com.cybage.DeccanSportClubApplication    : Starting DeccanSportClubApplication using Java 14.0.2 on Mukeshkumars with PID 8336 (D:\Malor-Project\deccan-sport-club\target\classes started by mukeshkumars in D:\Malor-Project\deccan-sport-club)
+2020-12-09 18:33:22.357  INFO 8336 --- [restartedMain] com.cybage.DeccanSportClubApplication    : No active profile set, falling back to default profiles: default
+2020-12-09 18:33:22.781  INFO 8336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-09 18:33:22.877  INFO 8336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 5 JPA repository interfaces.
+2020-12-09 18:33:23.061  INFO 8336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-09 18:33:23.062  INFO 8336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-09 18:33:23.062  INFO 8336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-09 18:33:23.136  INFO 8336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-09 18:33:23.136  INFO 8336 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 774 ms
+2020-12-09 18:33:23.239  INFO 8336 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-09 18:33:23.248  INFO 8336 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-09 18:33:23.257  INFO 8336 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-31 - Starting...
+2020-12-09 18:33:23.328  WARN 8336 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-09 18:33:23.340  INFO 8336 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-31 - Start completed.
+2020-12-09 18:33:23.341  INFO 8336 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-12-09 18:33:23.771  WARN 8336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-12-09 18:33:23.793  INFO 8336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-09 18:33:23.798  INFO 8336 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-12-09 18:33:24.321  INFO 8336 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-09 18:33:24.322  INFO 8336 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-09 18:33:24.437  INFO 8336 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-12-09 18:33:24.445  INFO 8336 --- [restartedMain] com.cybage.DeccanSportClubApplication    : Started DeccanSportClubApplication in 2.146 seconds (JVM running for 23870.444)
+2020-12-09 18:33:24.447  INFO 8336 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-12-09 18:33:29.391  INFO 8336 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-09 18:33:29.393  INFO 8336 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-09 18:33:29.394  INFO 8336 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2020-12-09 18:33:29.397  INFO 8336 --- [http-nio-8080-exec-1] com.cybage.services.SportsServiceImpl    : getting sports
+2020-12-09 18:33:50.947  INFO 8336 --- [Thread-151] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-09 18:33:50.948  INFO 8336 --- [Thread-151] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-09 18:33:50.948  INFO 8336 --- [Thread-151] com.zaxxer.hikari.HikariDataSource       : HikariPool-31 - Shutdown initiated...
+2020-12-09 18:33:50.966  INFO 8336 --- [Thread-151] com.zaxxer.hikari.HikariDataSource       : HikariPool-31 - Shutdown completed.

@@ -1,0 +1,34 @@
+
+6com.cybage.entity.Batches#toString()Ljava/lang/String;Ÿ
+”D:/D/Training-Content/projectData/Major_TrainingEnd_project/Backend-javaMajor/FET-java-major-project-G1/src/main/java/com/cybage/entity/Batches.javaf f("1*¦
+
+1Ÿ
+”D:/D/Training-Content/projectData/Major_TrainingEnd_project/Backend-javaMajor/FET-java-major-project-G1/src/main/java/com/cybage/entity/Batches.javag	 g(ð
+í
+Ÿ
+”D:/D/Training-Content/projectData/Major_TrainingEnd_project/Backend-javaMajor/FET-java-major-project-G1/src/main/java/com/cybage/entity/Batches.javag g(&
+%0java.lang.Integer"__id***(
+com.cybage.entity.Batches"	
+batchIdô
+ñ
+Ÿ
+”D:/D/Training-Content/projectData/Major_TrainingEnd_project/Backend-javaMajor/FET-java-major-project-G1/src/main/java/com/cybage/entity/Batches.javag: g(C
+%1java.time.LocalTime"__id*,**
+com.cybage.entity.Batches"
+	startTimeò
+ï
+Ÿ
+”D:/D/Training-Content/projectData/Major_TrainingEnd_project/Backend-javaMajor/FET-java-major-project-G1/src/main/java/com/cybage/entity/Batches.javagU g(\
+%2java.time.LocalTime"__id***(
+com.cybage.entity.Batches"	
+endTimeò
+ï
+Ÿ
+”D:/D/Training-Content/projectData/Major_TrainingEnd_project/Backend-javaMajor/FET-java-major-project-G1/src/main/java/com/cybage/entity/Batches.javah h(
+%3java.lang.Integer"__id*,**
+com.cybage.entity.Batches"
+	batchSize"ª
+Ÿ
+”D:/D/Training-Content/projectData/Major_TrainingEnd_project/Backend-javaMajor/FET-java-major-project-G1/src/main/java/com/cybage/entity/Batches.javag h(+
+""B
+com.cybage.entity.Batches
