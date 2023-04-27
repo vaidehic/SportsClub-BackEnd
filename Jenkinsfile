@@ -22,6 +22,8 @@ pipeline {
                     junit 'target/surefire-reports/*.xml'
                 }
          }
+         }
+              }
     
         stage('Sonar Analysis') {
             steps {
