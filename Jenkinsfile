@@ -14,7 +14,7 @@ pipeline {
         }
     
          
-         stage('Test') {
+         stage('Unit Test Case') {
              steps {
                  bat 'mvn test'
              }
@@ -55,6 +55,30 @@ server.upload(uploadSpec)
              }
              
             
+         stage('Build Docker Image') {
          
+         steps{
+                  bat "docker build -t vaidehi/sportsclub ."  
+         }
+     }
+	    
+     stage('Publish Docker Image') {
+         
+        steps{
+
+    	      withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'dockerPassword', usernameVariable: 'dockerUser')]) {
+    		    bat "docker login -u vaidehichaudhary77 -p Vaidehic@123
+	      }
+        	bat "docker push vaidehi/sportsclub"
+         }
+    } 
+        
+        
+        
+        
+        
+        
+        
+        
         }
     }   
