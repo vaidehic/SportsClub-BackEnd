@@ -67,7 +67,7 @@ server.upload(uploadSpec)
         steps{
 
     	      withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'dockerPassword', usernameVariable: 'dockerUser')]) {
-    		    bat "docker login -u vaidehichaudhary77 -p Vaidehic@123
+    		    bat "docker login -u vaidehichaudhary77 -p Vaidehic@123"
 	      }
         	bat "docker push vaidehi/sportsclub"
          }
