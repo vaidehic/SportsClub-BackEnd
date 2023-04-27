@@ -5,18 +5,24 @@ pipeline {
         maven "Maven 3.6.3"
         jdk "JDK-11"
     }  
-        stages {
-         stage('Build') {
-             steps {
-                 echo 'Building...'
-             }
-         }
              stage('Compile'){
             steps{
                 echo "COMPILE"
              bat 'mvn clean install'
             }
         }
+    
+              stages {
+         stage('Test') {
+             steps {
+                 bat 'mvn test'
+             }
+             post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
+         }
+    
         stage('Sonar Analysis') {
             steps {
                 // use the SonarQube Scanner to analyze the project
