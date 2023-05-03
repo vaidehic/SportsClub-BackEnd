@@ -1,10 +1,11 @@
 pipeline {
 	
-environment {
-registry = "vaidehichaudhary77/sportsclub"
-registryCredential = 'dockerhub_id'
-dockerImage = ''
-}
+
+	
+	environment {
+        DATE = new Date().format('yy.M')
+        TAG = "${DATE}.${BUILD_NUMBER}"
+    }
 	
 	
 
@@ -24,23 +25,30 @@ dockerImage = ''
             }
         }
     
-	    stage('Building our image') {
-steps{
-script {
-dockerImage = docker.build registry + ":$BUILD_NUMBER"
-}
-}
-}
-stage('Deploy our image') {
-steps{
-script {
-docker.withRegistry( '', registryCredential ) {
-dockerImage.push()
-}
-}
-}
-}
-	    
+	    stage('Docker Build') {
+            steps {
+                script {
+                    docker.build("sportsclub-docker-local/sportsclub:${TAG}")
+                }
+            }
+        }
+	stage('Pushing Docker Image to Jfrog Artifactory') {
+            steps {
+                script {
+                    docker.withRegistry('http://localhost:8082/', 'Jfrog-jenkinsUserPassword') {
+                        docker.image("sportsclub-docker-local/sportsclub:${TAG}").push()
+                        docker.image("sportsclub-docker-local/sportsclub:${TAG}").push("latest")
+                    }
+                }
+            }
+        }
+        stage('Deploy'){
+            steps {
+                bat "docker stop sportsclub | true"
+                bat "docker rm sportsclub | true"
+                bat "docker run --name sportsclub -d -p 8082:8080 http://localhost:8082/artifactory/sportsclub-docker-local/:${TAG}"
+            }
+        }	    
 	    
 	    
 	    
@@ -67,23 +75,7 @@ dockerImage.push()
             }
         }
             
-            stage('Upload_Artifact') {
-steps {
-    script{
-def server = Artifactory.server 'artifactory'
-               def uploadSpec = """{
-"files": [
-{
-      "pattern": "target/*.jar",
-"target": "sportsclub/"
-}
-]
-}"""
-server.upload(uploadSpec)
-}
-}
-
-             }
+            
              
      
         
