@@ -9,7 +9,7 @@ pipeline {
 	
 	
 
-    agent any
+    agent docker-agent
        tools{
         maven "Maven 3.6.3"
         jdk "JDK-11"
