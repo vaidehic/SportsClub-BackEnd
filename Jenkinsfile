@@ -11,7 +11,10 @@ pipeline {
 
     agent
 	{
-	node ('linux-slave')
+	node{
+		label 'linux-slave'
+	}
+	}
 	
        tools{
         maven "Maven 3.6.3"
