@@ -9,7 +9,7 @@ pipeline {
 	
 	
 
-    agent any
+    agent linux-slave
        tools{
         maven "Maven 3.6.3"
         jdk "JDK-11"
@@ -44,9 +44,9 @@ pipeline {
         }
         stage('Deploy'){
             steps {
-                bat "docker stop sportsclub | true"
-                bat "docker rm sportsclub | true"
-                bat "docker run --name sportsclub -d -p 8082:8080 http://localhost:8082/artifactory/sportsclub-docker-local/:${TAG}"
+                sh "docker stop sportsclub | true"
+                sh "docker rm sportsclub | true"
+                sh "docker run --name sportsclub -d -p 8082:8080 http://localhost:8082/artifactory/sportsclub-docker-local/:${TAG}"
             }
         }	    
 	    
@@ -55,7 +55,7 @@ pipeline {
          
          stage('Unit Test Case') {
              steps {
-                 bat 'mvn test'
+                 sh 'mvn test'
              }
              
              post {
@@ -70,7 +70,7 @@ pipeline {
             steps {
                 // use the SonarQube Scanner to analyze the project
                 withSonarQubeEnv('SonarQubeServer') {
-                    bat 'mvn sonar:sonar'
+                    sh 'mvn sonar:sonar'
                 }
             }
         }
