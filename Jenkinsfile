@@ -9,7 +9,10 @@ pipeline {
 	
 	
 
-    agent linux-slave
+    agent
+	{
+	node ('linux-slave')
+	
        tools{
         maven "Maven 3.6.3"
         jdk "JDK-11"
@@ -77,7 +80,7 @@ pipeline {
             
             
              
-     
+    }
         
         }
     }   
