@@ -65,16 +65,16 @@ pipeline {
                 }
             }
         }
-// 	stage('Pushing Docker Image to Jfrog Artifactory') {
-//             steps {
-//                 script {
-//                     docker.withRegistry('http://localhost:8082/', 'Jfrog-jenkinsUserPassword') {
-//                         docker.image("sportsclub-docker-local/sportsclub:${TAG}").push()
-//                         docker.image("sportsclub-docker-local/sportsclub:${TAG}").push("latest")
-//                     }
-//                 }
-//             }
-//         }
+	stage('Pushing Docker Image to Jfrog Artifactory') {
+            steps {
+                script {
+                    docker.withRegistry('http://localhost:8082/', 'Jfrog-jenkinsUserPassword') {
+                        docker.image("sportsclub-docker-local/sportsclub:${TAG}").push()
+                        docker.image("sportsclub-docker-local/sportsclub:${TAG}").push("latest")
+                    }
+                }
+            }
+        }
 //         stage('Deploy'){
 //             steps {
 //                 sh "docker stop sportsclub | true"
