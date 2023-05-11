@@ -61,7 +61,7 @@ pipeline {
             stage('Docker Build') {
             steps {
                 script {
-                    docker.build("docker-vaidehi//sportsclub:${TAG}")
+                    docker.build("docker-vaidehi/sportsclub:${TAG}")
                 }
             }
         }
