@@ -90,10 +90,22 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
+	<profile>
+
+   <id>sonar</id>
+    <activation>
+        <activeByDefault>true</activeByDefault>
+    </activation>
+     <properties>
+        <sonar.host.url>http://localhost:9000
+     </sonar.host.url>
+     </properties>
+</profile>
 
 </project>
