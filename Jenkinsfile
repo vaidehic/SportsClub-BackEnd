@@ -18,7 +18,7 @@ pipeline {
 	
        tools{
         maven "maven-linux-slave"
-        jdk "JDK-11"
+        jdk "linux-jdk"
     }  
 	
 	
