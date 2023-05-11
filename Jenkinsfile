@@ -70,7 +70,7 @@ pipeline {
                 script {
                     docker.withRegistry('http://172.27.59.80:8082/', 'artifactory-docker') {
                         docker.image("docker-vaidehi/sportsclub:${TAG}").push()
-                        docker.image("docker-vaidehi//sportsclub:${TAG}").push("latest")
+                        docker.image("docker-vaidehi/sportsclub:${TAG}").push("latest")
                     }
                 }
             }
