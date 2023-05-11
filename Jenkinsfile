@@ -31,30 +31,7 @@ pipeline {
             }
         }
     
-	    stage('Docker Build') {
-            steps {
-                script {
-                    docker.build("sportsclub-docker-local/sportsclub:${TAG}")
-                }
-            }
-        }
-	stage('Pushing Docker Image to Jfrog Artifactory') {
-            steps {
-                script {
-                    docker.withRegistry('http://localhost:8082/', 'Jfrog-jenkinsUserPassword') {
-                        docker.image("sportsclub-docker-local/sportsclub:${TAG}").push()
-                        docker.image("sportsclub-docker-local/sportsclub:${TAG}").push("latest")
-                    }
-                }
-            }
-        }
-        stage('Deploy'){
-            steps {
-                sh "docker stop sportsclub | true"
-                sh "docker rm sportsclub | true"
-                sh "docker run --name sportsclub -d -p 8082:8080 http://localhost:8082/artifactory/sportsclub-docker-local/:${TAG}"
-            }
-        }	    
+	    
 	    
 	    
 	    
@@ -81,7 +58,30 @@ pipeline {
             }
         }
             
-            
+            stage('Docker Build') {
+            steps {
+                script {
+                    docker.build("sportsclub-docker-local/sportsclub:${TAG}")
+                }
+            }
+        }
+	stage('Pushing Docker Image to Jfrog Artifactory') {
+            steps {
+                script {
+                    docker.withRegistry('http://localhost:8082/', 'Jfrog-jenkinsUserPassword') {
+                        docker.image("sportsclub-docker-local/sportsclub:${TAG}").push()
+                        docker.image("sportsclub-docker-local/sportsclub:${TAG}").push("latest")
+                    }
+                }
+            }
+        }
+        stage('Deploy'){
+            steps {
+                sh "docker stop sportsclub | true"
+                sh "docker rm sportsclub | true"
+                sh "docker run --name sportsclub -d -p 8082:8080 http://localhost:8082/artifactory/sportsclub-docker-local/:${TAG}"
+            }
+        }	    
         
         }
     }   
