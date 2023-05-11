@@ -61,16 +61,16 @@ pipeline {
             stage('Docker Build') {
             steps {
                 script {
-                    docker.build("sportsclub-docker-local/sportsclub:${TAG}")
+                    docker.build("docker-vaidehi//sportsclub:${TAG}")
                 }
             }
         }
 	stage('Pushing Docker Image to Jfrog Artifactory') {
             steps {
                 script {
-                    docker.withRegistry('http://localhost:8082/', 'Jfrog-jenkinsUserPassword') {
-                        docker.image("sportsclub-docker-local/sportsclub:${TAG}").push()
-                        docker.image("sportsclub-docker-local/sportsclub:${TAG}").push("latest")
+                    docker.withRegistry('http://172.27.59.80:8082/', 'artifactory-docker') {
+                        docker.image("docker-vaidehi/sportsclub:${TAG}").push()
+                        docker.image("docker-vaidehi//sportsclub:${TAG}").push("latest")
                     }
                 }
             }
