@@ -79,7 +79,7 @@ pipeline {
             steps {
                 sh "docker stop sportsclub | true"
                 sh "docker rm sportsclub | true"
-                sh "sudo docker run --network vaidehi-sports-network --name sportsclub-image -d -p 8082:8080 172.27.59.80:8082/artifactory/docker-vaidehi/:${TAG}"
+                sh "docker run --network vaidehi-sports-network --name sportsclub-image -d -p 8082:8080 172.27.59.80:8082/artifactory/docker-vaidehi/:${TAG}"
             }
         }	    
     
