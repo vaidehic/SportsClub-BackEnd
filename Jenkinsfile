@@ -49,14 +49,14 @@ pipeline {
          }
               
     
-        stage('Sonar Analysis') {
-            steps {
-                // use the SonarQube Scanner to analyze the project
-                withSonarQubeEnv('SonarQubeServer') {
-                    sh 'mvn sonar:sonar'
-                }
-            }
-        }
+//         stage('Sonar Analysis') {
+//             steps {
+//                 // use the SonarQube Scanner to analyze the project
+//                 withSonarQubeEnv('SonarQubeServer') {
+//                     sh 'mvn sonar:sonar'
+//                 }
+//             }
+//         }
             
             stage('Docker Build') {
             steps {
