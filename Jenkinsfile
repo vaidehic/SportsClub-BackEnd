@@ -53,7 +53,7 @@ pipeline {
         stage('Sonar Analysis') {
             steps {
                 // use the SonarQube Scanner to analyze the project
-                withSonarQubeEnv('SonarQubeServer') {
+                withSonarQubeEnv('linux-SonarQubeServer') {
                     sh 'mvn sonar:sonar'
                 }
             }
