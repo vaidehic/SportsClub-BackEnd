@@ -50,39 +50,39 @@ pipeline {
          }
               
     
-//         stage('Sonar Analysis') {
+        stage('Sonar Analysis') {
+            steps {
+                // use the SonarQube Scanner to analyze the project
+                withSonarQubeEnv('SonarQubeServer') {
+                    sh 'mvn sonar:sonar'
+                }
+            }
+	            }
+            
+//             stage('Docker Build') {
 //             steps {
-//                 // use the SonarQube Scanner to analyze the project
-//                 withSonarQubeEnv('SonarQubeServer') {
-//                     sh 'mvn sonar:sonar'
+//                 script {
+//                     docker.build("docker-vaidehi/sportsclub-image:${TAG}")
 //                 }
 //             }
-	    //         }
-            
-            stage('Docker Build') {
-            steps {
-                script {
-                    docker.build("docker-vaidehi/sportsclub-image:${TAG}")
-                }
-            }
-        }
-	stage('Pushing Docker Image to Jfrog Artifactory') {
-            steps {
-                script {
-                    docker.withRegistry('http://172.27.59.80:8082/', 'artifactory-docker') {
-                        docker.image("docker-vaidehi/sportsclub-image:${TAG}").push()
-                        docker.image("docker-vaidehi/sportsclub-image:${TAG}").push("latest")
-                    }
-                }
-            }
-        }
-        stage('Deploy'){
-            steps {
-                sh "docker stop docker-vaidehi/sportsclub-image | true"
-                sh "docker rm docker-vaidehi/sportsclub-image | true"
-                sh "docker run --network vaidehi-sports-network --name sportsclub -p 8082:8080 -d docker-vaidehi/sportsclub-image:${TAG}"
-            }
-        }	    
+//         }
+// 	stage('Pushing Docker Image to Jfrog Artifactory') {
+//             steps {
+//                 script {
+//                     docker.withRegistry('http://172.27.59.80:8082/', 'artifactory-docker') {
+//                         docker.image("docker-vaidehi/sportsclub-image:${TAG}").push()
+//                         docker.image("docker-vaidehi/sportsclub-image:${TAG}").push("latest")
+//                     }
+//                 }
+//             }
+//         }
+//         stage('Deploy'){
+//             steps {
+//                 sh "docker stop docker-vaidehi/sportsclub-image | true"
+//                 sh "docker rm docker-vaidehi/sportsclub-image | true"
+//                 sh "docker run --network vaidehi-sports-network --name sportsclub -p 8082:8080 -d docker-vaidehi/sportsclub-image:${TAG}"
+//             }
+//         }	    
     
         }
     }   
