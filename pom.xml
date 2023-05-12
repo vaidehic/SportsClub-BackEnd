@@ -19,12 +19,12 @@
 		<java.version>1.8</java.version>
 		
 	
-  <sonar.host.url>http://localhost:9000</sonar.host.url>
+<!--   <sonar.host.url>http://localhost:9000</sonar.host.url>
   <sonar.login>840879d4a4e79585bdadcb3a2d758b6bdf37ac7d</sonar.login>
   <sonar.language>java</sonar.language>
   <sonar.scm.provider>git</sonar.scm.provider>
 
-		
+		 -->
 	</properties>
 
 	<dependencies>
