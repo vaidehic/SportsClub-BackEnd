@@ -4,8 +4,8 @@ pipeline {
 	
 	environment {
         DATE = new Date().format('yy.M')
-        //TAG = "${DATE}.${BUILD_NUMBER}"
-	TAG = "${BUILD_NUMBER}"
+        TAG = "${DATE}.${BUILD_NUMBER}"
+	//TAG = "${BUILD_NUMBER}"
     }
 	
 	
@@ -80,7 +80,7 @@ pipeline {
             steps {
                 sh "docker stop sportsclub-image | true"
                 sh "docker rm sportsclub-image | true"
-                sh "docker run --network vaidehi-sports-network --name sportsclub -d -p 8082:8080 docker-vaidehi/sportsclub-image/:${TAG}"
+                sh "docker run --network vaidehi-sports-network --name sportsclub -p 8082:8080 -d docker-vaidehi/sportsclub-image:${TAG}"
             }
         }	    
     
