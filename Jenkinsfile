@@ -63,12 +63,17 @@ pipeline {
                 
             }
 	            }
-	     steps {
-    //sh 'docker-compose -f docker-compose/staging.yml build'
-		     sh '/usr/local/bin/docker-compose up --build -d'
+	     
+	    stage('Docker-Compose Up'){
+	    steps {
+		    sh '/usr/local/bin/docker-compose up --build -d'
 
-    //sh 'docker-compose -f docker-compose/staging.yml up --abort-on-container-exit'
-  }
+	    }
+	    }
+		    
+	    
+	    
+	    
 
             
 //             stage('Docker Build') {
