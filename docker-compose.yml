@@ -25,7 +25,7 @@ services:
     image: vaidehi-sportsclub-backend
     build: . 
     ports: 
-      - 8087:8080
+      - 8092:8080
     depends_on:
       - front-end
     networks:
