@@ -1,0 +1,36 @@
+version: "2"
+services:
+  mysqldb:
+    #add the name of image
+    image: mysql
+    ports:
+      - 3309:3306    
+    environment:
+      MYSQL_DATABASE: club
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - vaidehi-sportsclub-network
+
+  front-end:
+    image: vaidehi-sportsclub-frontend
+    ports:
+      - 8082:80
+    depends_on:
+      - mysqldb
+    networks:
+      - vaidehi-sportsclub-network
+
+
+  back-end:
+    image: vaidehi-sportsclub-backend
+    build: . 
+    ports: 
+      - 8087:8080
+    depends_on:
+      - front-end
+    networks:
+      - vaidehi-sportsclub-network
+
+networks:
+  vaidehi-sportsclub-network:
+    driver: bridge
