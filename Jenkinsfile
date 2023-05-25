@@ -67,6 +67,8 @@ pipeline {
 	    stage('Docker-Compose Up'){
 	    steps {
 		    sh '/usr/local/bin/docker-compose up --build -d'
+		     sh 'docker build -t jenkins-compose-build .'
+        sh 'docker run --rm jenkins-compose-build build'
 
 	    }
 	    }
