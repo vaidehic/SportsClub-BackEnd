@@ -4,7 +4,7 @@ services:
     #add the name of image
     image: mysql
     ports:
-      - 3307:3306    
+      - 3309:3306    
     environment:
       MYSQL_DATABASE: club
       MYSQL_ROOT_PASSWORD: root
