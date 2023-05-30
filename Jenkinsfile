@@ -63,15 +63,22 @@ pipeline {
                 
             }
 	            }
+	     stage('Start container') {
+      steps {
+        sh 'docker compose up -d --no-color --wait'
+        sh 'docker compose ps'
+      }
+    }
+	    
 	     
-	    stage('Docker-Compose Up'){
-	    steps {
-		    sh '/usr/local/bin/docker-compose up --build -d'
-		     sh 'docker build -t jenkins-compose-build .'
-        sh 'docker run --rm jenkins-compose-build build'
+// 	    stage('Docker-Compose Up'){
+// 	    steps {
+// 		    sh '/usr/local/bin/docker-compose up --build -d'
+// 		     sh 'docker build -t jenkins-compose-build .'
+//         sh 'docker run --rm jenkins-compose-build build'
 
-	    }
-	    }
+// 	    }
+// 	    }
 		    
 	    
 	    
@@ -102,7 +109,15 @@ pipeline {
 //                 sh "docker rm sportsclub | true"
 //                 sh "docker run --network vaidehi-sports-network --name sportsclub -p 8082:8080 -d docker-vaidehi/sportsclub-image:${TAG}"
 //             }
-//         }	    
+//         }	
+	    
+	      post {
+    always {
+      sh 'docker compose down --remove-orphans -v'
+      sh 'docker compose ps'
+    }
+  }
+	    
     
         }
     }   
