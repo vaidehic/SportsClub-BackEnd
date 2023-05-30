@@ -55,8 +55,6 @@ pipeline {
                 // use the SonarQube Scanner to analyze the project
                // withSonarQubeEnv('SonarQubeServer')
 		    
-// //                     sh 'mvn sonar:sonar'
-// 			  sh 'mvn sonar:sonar -sonar.host.url=http://171.27.59.174:9000'
 			sh 'mvn clean install'
                        sh  'mvn sonar:sonar -Dsonar.token=840879d4a4e79585bdadcb3a2d758b6bdf37ac7d'
 		  
@@ -110,7 +108,7 @@ pipeline {
 //                 sh "docker run --network vaidehi-sports-network --name sportsclub -p 8082:8080 -d docker-vaidehi/sportsclub-image:${TAG}"
 //             }
 //         }	
-    }
+    
 	    
 // 	      post {
 //     always {
@@ -119,6 +117,6 @@ pipeline {
 //     }
 //   }
 	    
-    
+    }
         
     }   
