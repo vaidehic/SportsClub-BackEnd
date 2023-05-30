@@ -110,6 +110,7 @@ pipeline {
 //                 sh "docker run --network vaidehi-sports-network --name sportsclub -p 8082:8080 -d docker-vaidehi/sportsclub-image:${TAG}"
 //             }
 //         }	
+    }
 	    
 	      post {
     always {
@@ -119,5 +120,5 @@ pipeline {
   }
 	    
     
-        }
+        
     }   
