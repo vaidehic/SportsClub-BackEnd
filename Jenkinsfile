@@ -75,8 +75,9 @@ pipeline {
 //                 sh "docker stop sportsclub | true"
 //                 sh "docker rm sportsclub | true"
 //                 sh "docker run --network vaidehi-sports-network --name sportsclub -p 8082:8080 -d docker-vaidehi/sportsclub-image:${TAG}"
-		    sh "docker compose down"
+		    
                     sh "docker compose up -d"
+		    sh "docker compose down"
                    // sh 'docker compose ps'
             }
         }
