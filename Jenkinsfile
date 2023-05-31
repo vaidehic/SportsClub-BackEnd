@@ -1,14 +1,10 @@
 pipeline {
-	
 
-	
 	environment {
         DATE = new Date().format('yy.M')
         TAG = "${DATE}.${BUILD_NUMBER}"
 	//TAG = "${BUILD_NUMBER}"
     }
-	
-	
 
     agent
 	{
@@ -23,7 +19,6 @@ pipeline {
     }  
 	
 	
-	
     stages{
              stage('Compile'){
             steps{
@@ -31,12 +26,7 @@ pipeline {
              sh 'mvn clean install'
             }
         }
-    
-	    
-	    
-	    
-	    
-         
+   
          stage('Unit Test Case') {
              steps {
                  sh 'mvn test'
@@ -49,7 +39,6 @@ pipeline {
          }
          }
               
-    
         stage('Sonar Analysis') {
             steps {
                 // use the SonarQube Scanner to analyze the project
@@ -61,14 +50,6 @@ pipeline {
                 
             }
 	            }
-// 	     stage('Start container') {
-//       steps {
-// 	sh 'docker compose down mysqldb'
-// 	sh 'docker compose down'
-//         sh 'docker compose up -d --no-color --wait'
-//         sh 'docker compose ps'
-//       }
-//     }
 	    
   
             stage('Docker Build') {
@@ -94,9 +75,9 @@ pipeline {
 //                 sh "docker stop sportsclub | true"
 //                 sh "docker rm sportsclub | true"
 //                 sh "docker run --network vaidehi-sports-network --name sportsclub -p 8082:8080 -d docker-vaidehi/sportsclub-image:${TAG}"
-		    sh 'docker compose down'
-                    sh 'docker compose up -d'
-                    sh 'docker compose ps'
+		    sh "docker compose down"
+                    sh "docker compose up -d"
+                   // sh 'docker compose ps'
             }
         }
 	    
