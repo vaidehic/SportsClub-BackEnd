@@ -18,7 +18,9 @@ pipeline {
         jdk "linux-jdk"
     }  
 	
-	  stage('Start Container'){
+	  
+    stages{
+	    stage('Start Container'){
             steps {
 //                 sh "docker stop sportsclub | true"
 //                 sh "docker rm sportsclub | true"
@@ -29,7 +31,6 @@ pipeline {
                    // sh 'docker compose ps'
             }
         }
-    stages{
              stage('Compile'){
             steps{
                 echo "COMPILE"
