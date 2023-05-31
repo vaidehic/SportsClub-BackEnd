@@ -18,7 +18,17 @@ pipeline {
         jdk "linux-jdk"
     }  
 	
-	
+	  stage('Start Container'){
+            steps {
+//                 sh "docker stop sportsclub | true"
+//                 sh "docker rm sportsclub | true"
+//                 sh "docker run --network vaidehi-sports-network --name sportsclub -p 8082:8080 -d docker-vaidehi/sportsclub-image:${TAG}"
+		    
+                    sh "docker compose up -d"
+		    sh "docker compose down"
+                   // sh 'docker compose ps'
+            }
+        }
     stages{
              stage('Compile'){
             steps{
@@ -70,17 +80,17 @@ pipeline {
                 }
             }
         }
-        stage('Deploy'){
-            steps {
-//                 sh "docker stop sportsclub | true"
-//                 sh "docker rm sportsclub | true"
-//                 sh "docker run --network vaidehi-sports-network --name sportsclub -p 8082:8080 -d docker-vaidehi/sportsclub-image:${TAG}"
+//         stage('Deploy'){
+//             steps {
+// //                 sh "docker stop sportsclub | true"
+// //                 sh "docker rm sportsclub | true"
+// //                 sh "docker run --network vaidehi-sports-network --name sportsclub -p 8082:8080 -d docker-vaidehi/sportsclub-image:${TAG}"
 		    
-                    sh "docker compose up -d"
-		    sh "docker compose down"
-                   // sh 'docker compose ps'
-            }
-        }
+//                     sh "docker compose up -d"
+// 		    sh "docker compose down"
+//                    // sh 'docker compose ps'
+//             }
+//         }
 	    
     }
         
