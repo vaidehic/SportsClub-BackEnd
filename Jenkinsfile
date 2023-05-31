@@ -61,41 +61,44 @@ pipeline {
                 
             }
 	            }
-	     stage('Start container') {
-      steps {
-	sh 'docker compose down mysqldb'
-	sh 'docker compose down'
-        sh 'docker compose up -d --no-color --wait'
-        sh 'docker compose ps'
-      }
-    }
+// 	     stage('Start container') {
+//       steps {
+// 	sh 'docker compose down mysqldb'
+// 	sh 'docker compose down'
+//         sh 'docker compose up -d --no-color --wait'
+//         sh 'docker compose ps'
+//       }
+//     }
 	    
   
-//             stage('Docker Build') {
-//             steps {
-//                 script {
-//                     docker.build("docker-vaidehi/sportsclub-image:${TAG}")
-//                 }
-//             }
-//         }
+            stage('Docker Build') {
+            steps {
+                script {
+                    docker.build("docker-vaidehi/sportsclub-image:${TAG}")
+                }
+            }
+        }
 	    
-// 	stage('Pushing Docker Image to Jfrog Artifactory') {
-//             steps {
-//                 script {
-//                     docker.withRegistry('http://172.27.59.80:8082/', 'artifactory-docker') {
-//                         docker.image("docker-vaidehi/sportsclub-image:${TAG}").push()
-//                         docker.image("docker-vaidehi/sportsclub-image:${TAG}").push("latest")
-//                     }
-//                 }
-//             }
-//         }
-//         stage('Deploy'){
-//             steps {
+	stage('Pushing Docker Image to Jfrog Artifactory') {
+            steps {
+                script {
+                    docker.withRegistry('http://172.27.59.80:8082/', 'artifactory-docker') {
+                        docker.image("docker-vaidehi/sportsclub-image:${TAG}").push()
+                        docker.image("docker-vaidehi/sportsclub-image:${TAG}").push("latest")
+                    }
+                }
+            }
+        }
+        stage('Deploy'){
+            steps {
 //                 sh "docker stop sportsclub | true"
 //                 sh "docker rm sportsclub | true"
 //                 sh "docker run --network vaidehi-sports-network --name sportsclub -p 8082:8080 -d docker-vaidehi/sportsclub-image:${TAG}"
-//             }
-//         }
+		    sh 'docker compose down'
+                    sh 'docker compose up -d'
+                    sh 'docker compose ps'
+            }
+        }
 	    
     }
         
