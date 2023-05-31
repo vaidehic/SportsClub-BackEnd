@@ -23,7 +23,7 @@ pipeline {
              stage('Compile'){
             steps{
                 echo "COMPILE"
-             sh 'mvn clean install'
+             sh 'mvn clean compile'
             }
         }
    
