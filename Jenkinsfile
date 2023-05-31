@@ -19,7 +19,7 @@ pipeline {
     }  
 	
 	  
-    
+    stages{
              stage('Compile'){
             steps{
                 echo "COMPILE"
@@ -71,7 +71,7 @@ pipeline {
             }
         }
 	
-	stages{
+	
 	    stage('Start Container'){
             steps {
 //                 sh "docker stop sportsclub | true"
