@@ -22,7 +22,7 @@ services:
 
 
   back-end:
-    image: docker-vaidehi/sportsclub-image
+    image: docker-vaidehi/sportsclub-image:latest
     build: . 
     ports: 
       - 8092:8080
