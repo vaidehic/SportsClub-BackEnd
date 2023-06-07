@@ -10,7 +10,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - db:/var/lib/mysql
-    restart: always
+   # restart: always
     networks:
       - vaidehi-sportsclub-network
 
@@ -30,7 +30,7 @@ services:
       - 8092:8080
     depends_on:
       - mysqldb
-   # restart: always
+    restart: always
     networks:
       - vaidehi-sportsclub-network
     
