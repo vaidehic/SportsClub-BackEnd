@@ -9,8 +9,8 @@ services:
       MYSQL_DATABASE: club
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - "/DATA/docker-volume/docker/volumes/volume-vaidehi/_data"
-    restart: always
+      - db:/var/lib/mysql
+    #restart: always
     networks:
       - vaidehi-sportsclub-network
 
@@ -22,6 +22,8 @@ services:
 #       - mysqldb
     networks:
       - vaidehi-sportsclub-network
+    volume:
+    
 
 
   back-end:
@@ -34,7 +36,11 @@ services:
    # restart: always
     networks:
       - vaidehi-sportsclub-network
+    
 
 networks:
   vaidehi-sportsclub-network:
     driver: bridge
+    
+volumes:
+  db:
