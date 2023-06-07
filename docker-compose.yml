@@ -18,8 +18,7 @@ services:
     image: vaidehi-sportsclub-frontend
     ports:
       - 8082:80
-#     depends_on:
-#       - mysqldb
+
     networks:
       - vaidehi-sportsclub-network
      
