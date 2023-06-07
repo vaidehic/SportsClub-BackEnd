@@ -10,7 +10,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - "/DATA/docker-volume/docker/volumes/volume-vaidehi/_data"
-   # restart: always
+    restart: always
     networks:
       - vaidehi-sportsclub-network
 
