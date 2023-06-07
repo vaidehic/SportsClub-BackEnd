@@ -9,7 +9,7 @@ services:
       MYSQL_DATABASE: club
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - vaidehi-db:/var/lib/mysql
+      - volume-vaidehi:/var/lib/mysql
     restart: always
     networks:
       - vaidehi-sportsclub-network
@@ -40,4 +40,5 @@ networks:
     driver: bridge
     
 volumes:
-  vaidehi-db:
+  volume-vaidehi:
+    external: true
