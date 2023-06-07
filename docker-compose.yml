@@ -22,9 +22,7 @@ services:
 #       - mysqldb
     networks:
       - vaidehi-sportsclub-network
-    volume:
-    
-
+     
 
   back-end:
     image: docker-vaidehi/sportsclub-image:latest
